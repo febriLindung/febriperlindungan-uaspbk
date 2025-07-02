@@ -1,0 +1,3 @@
+<template>
+    Tambah Karyawan
+</template>
