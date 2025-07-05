@@ -1,95 +1,99 @@
-# 🛍️ Aplikasi Manajemen Kedai Harian (UMKM)
+# 🔧 Aplikasi Manajemen Bengkel UMKM
 
-Aplikasi ini merupakan sistem manajemen berbasis web yang dirancang khusus untuk kedai harian, warung sembako, atau bengkel UMKM. Aplikasi ini membantu pemilik usaha untuk mengelola produk, layanan, transaksi, laporan, serta data karyawan secara efisien dan mudah diakses.
-
----
-
-## ✅ Fitur Utama
-
-| Fitur        | Deskripsi                                                                 |
-|--------------|---------------------------------------------------------------------------|
-| Dashboard    | Tampilan utama yang menampilkan ringkasan data dan statistik              |
-| Karyawan     | Tambah, lihat daftar, edit, dan hapus data karyawan                       |
-| Layanan      | Tambah, lihat daftar, edit, dan hapus layanan jasa                        |
-| Sparepart    | Tambah, lihat daftar, edit, dan hapus data sparepart atau barang          |
-| Transaksi    | Tambah transaksi, edit transaksi, hapus transaksi, dan lihat daftar       |
-| Laporan      | Rekap transaksi atau aktivitas berdasarkan waktu atau kategori            |
+Aplikasi ini adalah **sistem manajemen berbasis web** yang dirancang khusus untuk mendukung operasional **bengkel UMKM** (Usaha Mikro, Kecil, dan Menengah).  
+Fitur utamanya membantu mengelola **karyawan**, **layanan servis**, **stok sparepart**, **transaksi servis**, dan **laporan** secara terpusat dan mudah diakses.
 
 ---
 
-## 🌐 Routing Aplikasi
+## 🚀 Fitur Utama
 
-### 🔹 Base Routing
-
-| Path             | Name            | Komponen            |
-|------------------|------------------|---------------------|
-| `/`              | DashboardView    | Halaman dashboard   |
-| `/laporan`       | LaporanView      | Halaman laporan     |
-| `/transaksi`     | TransaksiView    | Daftar transaksi    |
-
-### 🔸 Routing Karyawan
-
-| Path                  | Name              | Komponen             |
-|-----------------------|-------------------|----------------------|
-| `/karyawan`           | karyawanList      | ListKaryawan.vue     |
-| `/karyawan/tambah`    | karyawanTambah    | TambahKaryawan.vue   |
-| `/karyawan/edit`      | karyawanEdit      | EditKaryawan.vue     |
-
-### 🔸 Routing Layanan
-
-| Path                  | Name              | Komponen             |
-|-----------------------|-------------------|----------------------|
-| `/layanan`            | layananList       | ListLayanan.vue      |
-| `/layanan/tambah`     | layananTambah     | TambahLayanan.vue    |
-| `/layanan/edit`       | layananEdit       | EditLayanan.vue      |
-
-### 🔸 Routing Sparepart
-
-| Path                   | Name               | Komponen               |
-|------------------------|--------------------|------------------------|
-| `/sparepart`           | sparepartList      | ListSparepart.vue      |
-| `/sparepart/tambah`    | sparepartTambah    | TambahSparepart.vue    |
-| `/sparepart/edit`      | sparepartEdit      | EditSparepart.vue      |
+| Fitur       | Deskripsi                                                                 |
+|-------------|---------------------------------------------------------------------------|
+| **Dashboard**   | Menampilkan ringkasan data penting seperti total transaksi, layanan terpakai, dan pendapatan harian |
+| **Karyawan**    | Tambah, lihat, edit, dan hapus data karyawan bengkel                  |
+| **Layanan**     | Kelola daftar layanan servis: tambah, edit, hapus layanan             |
+| **Sparepart**   | Manajemen stok sparepart: tambah sparepart baru, edit, hapus sparepart lama |
+| **Transaksi**   | Pencatatan transaksi servis dan penjualan sparepart                   |
+| **Laporan**     | Rekap transaksi per periode (harian, bulanan) atau berdasarkan kategori |
 
 ---
 
-## 📡 API Endpoint (menggunakan JSON Server)
+## 📁 Struktur Routing Aplikasi
 
-### 👤 Karyawan
+### 🔹 **Base Routing**
 
-| Method  | Endpoint         | Fungsi                            |
-|---------|------------------|-----------------------------------|
-| GET     | `/karyawan`      | Ambil semua data karyawan         |
-| POST    | `/karyawan`      | Tambah data karyawan              |
-| PUT     | `/karyawan/:id`  | Edit data karyawan                |
-| DELETE  | `/karyawan/:id`  | Hapus data karyawan               |
+| Path         | Name             | Komponen              | Deskripsi                      |
+|--------------|------------------|-----------------------|--------------------------------|
+| `/`          | DashboardView    | DashboardView.vue     | Ringkasan data utama bengkel   |
+| `/laporan`   | LaporanView      | LaporanView.vue       | Halaman laporan transaksi      |
+| `/transaksi` | TransaksiView    | TransaksiView.vue     | Daftar transaksi servis        |
 
-### 🧾 Layanan
+### 🔸 **Routing Karyawan**
 
-| Method  | Endpoint         | Fungsi                            |
-|---------|------------------|-----------------------------------|
-| GET     | `/layanan`       | Ambil semua layanan               |
-| POST    | `/layanan`       | Tambah layanan                    |
-| PUT     | `/layanan/:id`   | Edit layanan                      |
-| DELETE  | `/layanan/:id`   | Hapus layanan                     |
+| Path                | Name             | Komponen               | Deskripsi                     |
+|---------------------|------------------|------------------------|-------------------------------|
+| `/karyawan`         | karyawanList     | ListKaryawan.vue       | Daftar karyawan               |
+| `/karyawan/tambah`  | karyawanTambah   | TambahKaryawan.vue     | Form tambah karyawan baru     |
+| `/karyawan/edit`    | karyawanEdit     | EditKaryawan.vue       | Form edit data karyawan       |
 
-### 🔧 Sparepart
+### 🔸 **Routing Layanan**
 
-| Method  | Endpoint            | Fungsi                          |
-|---------|---------------------|---------------------------------|
-| GET     | `/sparepart`        | Ambil semua sparepart           |
-| POST    | `/sparepart`        | Tambah sparepart                |
-| PUT     | `/sparepart/:id`    | Edit sparepart                  |
-| DELETE  | `/sparepart/:id`    | Hapus sparepart                 |
+| Path                | Name             | Komponen               | Deskripsi                     |
+|---------------------|------------------|------------------------|-------------------------------|
+| `/layanan`          | layananList      | ListLayanan.vue        | Daftar layanan servis         |
+| `/layanan/tambah`   | layananTambah    | TambahLayanan.vue      | Form tambah layanan baru      |
+| `/layanan/edit`     | layananEdit      | EditLayanan.vue        | Form edit layanan             |
 
-### 💳 Transaksi
+### 🔸 **Routing Sparepart**
 
-| Method  | Endpoint            | Fungsi                          |
-|---------|---------------------|---------------------------------|
-| GET     | `/transaksi`        | Ambil semua transaksi           |
-| POST    | `/transaksi`        | Tambah transaksi                |
-| PUT     | `/transaksi/:id`    | Edit transaksi                  |
-| DELETE  | `/transaksi/:id`    | Hapus transaksi                 |
+| Path                | Name             | Komponen               | Deskripsi                     |
+|---------------------|------------------|------------------------|-------------------------------|
+| `/sparepart`        | sparepartList    | ListSparepart.vue      | Daftar sparepart              |
+| `/sparepart/tambah` | sparepartTambah  | TambahSparepart.vue    | Form tambah sparepart baru    |
+| `/sparepart/edit`   | sparepartEdit    | EditSparepart.vue      | Form edit sparepart           |
+
+---
+
+## 📡 API Endpoint (JSON Server)
+
+Proyek ini menggunakan **JSON Server** sebagai backend mock API.  
+Setiap entitas memiliki endpoint CRUD berikut:
+
+### 👨‍🔧 **Karyawan**
+
+| Method  | Endpoint         | Deskripsi                     |
+|---------|------------------|--------------------------------|
+| GET     | `/karyawan`      | Ambil semua data karyawan      |
+| POST    | `/karyawan`      | Tambah karyawan baru           |
+| PUT     | `/karyawan/:id`  | Edit data karyawan berdasarkan ID |
+| DELETE  | `/karyawan/:id`  | Hapus data karyawan berdasarkan ID |
+
+### 🧾 **Layanan**
+
+| Method  | Endpoint         | Deskripsi                     |
+|---------|------------------|--------------------------------|
+| GET     | `/layanan`       | Ambil daftar layanan           |
+| POST    | `/layanan`       | Tambah layanan baru            |
+| PUT     | `/layanan/:id`   | Edit layanan berdasarkan ID    |
+| DELETE  | `/layanan/:id`   | Hapus layanan berdasarkan ID   |
+
+### 🔩 **Sparepart**
+
+| Method  | Endpoint         | Deskripsi                     |
+|---------|------------------|--------------------------------|
+| GET     | `/sparepart`     | Ambil daftar sparepart         |
+| POST    | `/sparepart`     | Tambah sparepart baru          |
+| PUT     | `/sparepart/:id` | Edit sparepart berdasarkan ID  |
+| DELETE  | `/sparepart/:id` | Hapus sparepart berdasarkan ID |
+
+### 💳 **Transaksi**
+
+| Method  | Endpoint         | Deskripsi                     |
+|---------|------------------|--------------------------------|
+| GET     | `/transaksi`     | Ambil semua transaksi          |
+| POST    | `/transaksi`     | Tambah transaksi baru          |
+| PUT     | `/transaksi/:id` | Edit transaksi berdasarkan ID  |
+| DELETE  | `/transaksi/:id` | Hapus transaksi berdasarkan ID |
 
 ---
 
