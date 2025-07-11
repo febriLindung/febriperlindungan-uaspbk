@@ -9,7 +9,7 @@ export const useSparepartStore = defineStore('sparepart', {
   actions: {
     async getSparepart() {
       try {
-        const res = await axios.get('https://swanky-amusing-hockey.glitch.me/sparepart')
+        const res = await axios.get('http://localhost:3000/sparepart')
         this.sparepart = res.data
       } catch (error) {
         console.error("Gagal Fetch Data", error)
@@ -30,7 +30,7 @@ export const useSparepartStore = defineStore('sparepart', {
           ...sparepart
         }
 
-        const res = await axios.post('https://swanky-amusing-hockey.glitch.me/sparepart', newSparepart)
+        const res = await axios.post('http://localhost:3000/sparepart', newSparepart)
         this.sparepart.push(res.data)
 
       } catch (error) {
