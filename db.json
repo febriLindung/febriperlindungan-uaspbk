@@ -1,0 +1,19 @@
+{
+    "sparepart": [
+        {
+            "id": "1",
+            "nama": "Busi",
+            "stok": 4
+        },
+        {
+            "id": "2",
+            "nama": "klep",
+            "stok": 4
+        },
+        {
+            "id": "3",
+            "nama": "MPX Oil",
+            "stok": 3
+        }
+    ]
+}
